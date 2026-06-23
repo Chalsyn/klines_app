@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">#0D0D0D</item>
+        <item name="colorPrimary">#2C3E50</item>
+        <item name="colorPrimaryDark">#1A252F</item>
+        <item name="colorAccent">#F1C40F</item>
+        <item name="android:textColor">#ECF0F1</item>
+    </style>
+
+    <!-- 深色对话框主题 -->
+    <style name="DarkDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/dialog_bg</item>
+        <item name="colorPrimary">#F1C40F</item>
+        <item name="colorAccent">#F1C40F</item>
+        <item name="android:textColor">#ECF0F1</item>
+        <item name="android:textColorPrimary">#ECF0F1</item>
+        <item name="buttonBarPositiveButtonStyle">@style/DialogBtn</item>
+        <item name="buttonBarNegativeButtonStyle">@style/DialogBtn</item>
+        <item name="buttonBarNeutralButtonStyle">@style/DialogBtn</item>
+    </style>
+
+    <style name="DialogBtn" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">#F1C40F</item>
+    </style>
+
+    <!-- Table header cell -->
+    <style name="ThCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#F1C40F</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">2dp</item>
+    </style>
+
+    <!-- Table data cell -->
+    <style name="TdCell">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#ECF0F1</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">2dp</item>
+    </style>
+</resources>

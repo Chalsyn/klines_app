@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#0D0D0D">
+
+    <!-- ═══════════════ LEFT PANEL 300dp ═══════════════ -->
+    <ScrollView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="#161616"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📈 K线训练复盘"
+                android:textColor="#ECF0F1"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingBottom="8dp"/>
+
+            <!-- Load / Random -->
+            <Button
+                android:id="@+id/btnLoad"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="📁 导入历史数据"
+                android:backgroundTint="#2C3E50"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginBottom="5dp"/>
+
+            <Button
+                android:id="@+id/btnRandom"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="🎲 随机起点（不重置账本）"
+                android:backgroundTint="#34495E"
+                android:textColor="#FFFFFF"
+                android:enabled="false"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- ── 配置 ── -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="⚙️ 配置" android:textColor="#F1C40F" android:textStyle="bold"
+                android:paddingBottom="4dp"/>
+
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="K线密度:" android:textColor="#AAAAAA" android:textSize="12sp"/>
+            <Spinner
+                android:id="@+id/spDensity"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:entries="@array/density_options"
+                android:background="@drawable/spinner_bg"
+                android:layout_marginBottom="6dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="10dp"
+                android:gravity="center_vertical">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="合约乘数:" android:textColor="#AAAAAA"
+                    android:textSize="12sp"/>
+                <EditText
+                    android:id="@+id/etMultiplier"
+                    android:layout_width="90dp"
+                    android:layout_height="36dp"
+                    android:text="100"
+                    android:inputType="number"
+                    android:textColor="#ECF0F1"
+                    android:background="@drawable/edit_bg"
+                    android:padding="6dp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- ── 分析线工具 ── -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="📐 分析线工具" android:textColor="#F1C40F" android:textStyle="bold"
+                android:paddingBottom="4dp"/>
+
+            <Button
+                android:id="@+id/btnAddLine"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:text="📍 添加水平分析线"
+                android:backgroundTint="#D35400"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <Button
+                android:id="@+id/btnClearLines"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:text="🗑️ 清空所有分析线"
+                android:backgroundTint="#4A1010"
+                android:textColor="#CCCCCC"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- ── 步进控制 ── -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="🕹️ 步进控制" android:textColor="#F1C40F" android:textStyle="bold"
+                android:paddingBottom="4dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="10dp">
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="⬅ 后退"
+                    android:backgroundTint="#34495E"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginEnd="4dp"/>
+                <Button
+                    android:id="@+id/btnNext"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:text="前进 ➡"
+                    android:backgroundTint="#2980B9"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- ── 下单面板 ── -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="🔥 下单面板" android:textColor="#F1C40F" android:textStyle="bold"
+                android:paddingBottom="4dp"/>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="5dp"
+                android:gravity="center_vertical">
+                <TextView android:layout_width="52dp" android:layout_height="wrap_content"
+                    android:text="止损:" android:textColor="#E74C3C" android:textSize="13sp"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/etSl"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:text="0"
+                    android:inputType="numberDecimal"
+                    android:textColor="#ECF0F1"
+                    android:background="@drawable/edit_bg_red"
+                    android:padding="6dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="8dp"
+                android:gravity="center_vertical">
+                <TextView android:layout_width="52dp" android:layout_height="wrap_content"
+                    android:text="止盈:" android:textColor="#2ECC71" android:textSize="13sp"
+                    android:textStyle="bold"/>
+                <EditText
+                    android:id="@+id/etTp"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:text="0"
+                    android:inputType="numberDecimal"
+                    android:textColor="#ECF0F1"
+                    android:background="@drawable/edit_bg_green"
+                    android:padding="6dp"/>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginBottom="12dp">
+                <Button
+                    android:id="@+id/btnBuy"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="🟢 做多"
+                    android:backgroundTint="#2ECC71"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="4dp"/>
+                <Button
+                    android:id="@+id/btnSell"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="🔴 做空"
+                    android:backgroundTint="#E74C3C"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- ── 账户信息 ── -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:background="#1A1A1A"
+                android:padding="8dp" android:layout_marginBottom="8dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="价格: --"
+                        android:textColor="#AAAAAA"
+                        android:textSize="13sp"/>
+                    <TextView
+                        android:id="@+id/tvBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="余额: $10,000.00"
+                        android:textColor="#F1C40F"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ── 当前持仓 ── -->
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="📥 当前持仓（点击平仓）" android:textColor="#F1C40F"
+                android:textStyle="bold" android:paddingBottom="4dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPositions"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#1A1A1A"
+                android:layout_marginBottom="4dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- ═══════════════ RIGHT AREA ═══════════════ -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- K线图 -->
+        <com.github.mikephil.charting.charts.CombinedChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+        <!-- 历史记录表头 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:background="#1A1A1A"
+            android:orientation="horizontal">
+            <TextView style="@style/ThCell" android:text="#"    android:layout_width="36dp"/>
+            <TextView style="@style/ThCell" android:text="方向" android:layout_width="44dp"/>
+            <TextView style="@style/ThCell" android:text="开仓价"/>
+            <TextView style="@style/ThCell" android:text="平仓价"/>
+            <TextView style="@style/ThCell" android:text="预计RR"/>
+            <TextView style="@style/ThCell" android:text="实际RR"/>
+            <TextView style="@style/ThCell" android:text="最大浮亏"/>
+            <TextView style="@style/ThCell" android:text="盈亏"/>
+        </LinearLayout>
+
+        <!-- 历史记录列表 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHistory"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#111111"/>
+
+    </LinearLayout>
+</LinearLayout>

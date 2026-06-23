@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">K线训练复盘</string>
+
+    <string-array name="density_options">
+        <item>标准视野 (80根)</item>
+        <item>高密度视角 (160根)</item>
+        <item>超高密度视角 (240根)</item>
+        <item>放大局部 (40根)</item>
+    </string-array>
+</resources>
